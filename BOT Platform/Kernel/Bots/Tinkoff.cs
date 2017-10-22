@@ -131,10 +131,10 @@ namespace BOT_Platform.Kernel.Bots
 
                 DialogWaitings.Add(seller.OwnerId, (new []{code.ToString()}, corAction, uncAct));
             }
-            System.Timers.Timer timer = new System.Timers.Timer(60000);
+            System.Timers.Timer timer = new System.Timers.Timer(20000);
             timer.Elapsed += (sender, args) =>
             {
-                if (DialogWaitings.ContainsKey(seller.GroupId))
+                if (DialogWaitings.ContainsKey(seller.OwnerId))
                 {
                     Functions.SendMessage(this, message, "❌ Проверка не пройдена: истекло время ожидания подтверждения", message.ChatId != null);
                     DialogWaitings.Remove(seller.GroupId);
