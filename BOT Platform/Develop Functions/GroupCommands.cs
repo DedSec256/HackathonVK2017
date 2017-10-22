@@ -96,7 +96,7 @@ namespace MyFunctions
                             catch
                             {
                                 Functions.SendMessage(bot, mess, "❌ Заполненная вами форма имеет неправильный вид!\nУбедитесь, что заполнены все пункты.", mess.ChatId != null);
-                                return;
+                                return; 
                             }
                         }
                     }
